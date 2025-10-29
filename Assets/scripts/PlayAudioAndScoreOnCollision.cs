@@ -11,6 +11,7 @@ public class PlayAudioAndScoreOnCollision : MonoBehaviour
     public int scoreForOne = 10;
     public int scoreForTwo = 20;
     public int scoreForThree = 30;
+    public int ScoreForCube = 20;
 
     // Track how many times THIS object has been hit
     private int localHitCount = 0;
@@ -36,6 +37,8 @@ public class PlayAudioAndScoreOnCollision : MonoBehaviour
             pointsToAdd = scoreForTwo;
         else if (gameObject.CompareTag("Zemen Gebeya"))
             pointsToAdd = scoreForThree;
+        else if (gameObject.CompareTag("cube"))
+            pointsToAdd = ScoreForCube;
 
         if (pointsToAdd > 0)
         {

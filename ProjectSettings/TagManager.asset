@@ -17,6 +17,8 @@ TagManager:
   - Ethio Telecome
   - Telebirr
   - Zemen Gebeya
+  - SamplesInfoPanel
+  - cube
   layers:
   - Default
   - TransparentFX

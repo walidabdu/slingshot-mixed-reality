@@ -138,7 +138,6 @@ GameObject:
   - component: {fileID: 590250}
   - component: {fileID: 590249}
   - component: {fileID: 590255}
-  - component: {fileID: 590254}
   - component: {fileID: 590256}
   m_Layer: 0
   m_Name: cubes (3)
@@ -155,7 +154,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590248}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -260,20 +259,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1063566524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &590254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97550a3517528f04fa1c4046310dc89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetDelay: 3
-  resetSpeed: 2
 --- !u!114 &590255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8416e0ee819f6d04d9030e0a38097601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound: {fileID: 0}
+  collisionSound: {fileID: 8300000, guid: 9eb1449a722baf844af89a8e023ea44e, type: 3}
   scoreForOne: 10
   scoreForTwo: 20
   scoreForThree: 30
@@ -301,12 +286,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 590248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499179b16eb914c439bf6784a70c6c35, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d689e74080929346b214b4331110f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityThreshold: 1
-  displacementThreshold: 0.8
-  indirectHitScore: 10
+  directHitScore: 20
+  fallScore: 10
+  fallDistance: 0.5
+  hitSound: {fileID: 0}
 --- !u!1 &19245999 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2482422840418843564, guid: ea16c3c8c1688234fa81a4f39339bf1b,
@@ -611,7 +597,6 @@ GameObject:
   - component: {fileID: 49759130}
   - component: {fileID: 49759129}
   - component: {fileID: 49759135}
-  - component: {fileID: 49759134}
   - component: {fileID: 49759136}
   m_Layer: 0
   m_Name: cubes (2)
@@ -628,7 +613,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49759128}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -733,20 +718,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1063566524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &49759134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49759128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97550a3517528f04fa1c4046310dc89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetDelay: 3
-  resetSpeed: 2
 --- !u!114 &49759135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,7 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8416e0ee819f6d04d9030e0a38097601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound: {fileID: 0}
+  collisionSound: {fileID: 8300000, guid: 9eb1449a722baf844af89a8e023ea44e, type: 3}
   scoreForOne: 10
   scoreForTwo: 20
   scoreForThree: 30
@@ -774,12 +745,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 49759128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499179b16eb914c439bf6784a70c6c35, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d689e74080929346b214b4331110f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityThreshold: 1
-  displacementThreshold: 0.8
-  indirectHitScore: 10
+  directHitScore: 20
+  fallScore: 10
+  fallDistance: 0.5
+  hitSound: {fileID: 0}
 --- !u!1 &56339797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,7 +2186,6 @@ GameObject:
   - component: {fileID: 195391840}
   - component: {fileID: 195391839}
   - component: {fileID: 195391845}
-  - component: {fileID: 195391844}
   - component: {fileID: 195391846}
   m_Layer: 0
   m_Name: cubes (1)
@@ -2231,7 +2202,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195391838}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2336,20 +2307,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1063566524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &195391844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195391838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97550a3517528f04fa1c4046310dc89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetDelay: 3
-  resetSpeed: 2
 --- !u!114 &195391845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2362,7 +2319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8416e0ee819f6d04d9030e0a38097601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound: {fileID: 0}
+  collisionSound: {fileID: 8300000, guid: 9eb1449a722baf844af89a8e023ea44e, type: 3}
   scoreForOne: 10
   scoreForTwo: 20
   scoreForThree: 30
@@ -2377,12 +2334,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 195391838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499179b16eb914c439bf6784a70c6c35, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d689e74080929346b214b4331110f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityThreshold: 1
-  displacementThreshold: 0.8
-  indirectHitScore: 10
+  directHitScore: 20
+  fallScore: 10
+  fallDistance: 0.5
+  hitSound: {fileID: 0}
 --- !u!4 &208471549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8149640132073612291, guid: 5fca3702cdf1a214a94e69dcfa704e17,
@@ -2940,7 +2898,6 @@ GameObject:
   - component: {fileID: 258023733}
   - component: {fileID: 258023732}
   - component: {fileID: 258023738}
-  - component: {fileID: 258023737}
   - component: {fileID: 258023739}
   m_Layer: 0
   m_Name: cube
@@ -2957,7 +2914,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258023731}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -3062,20 +3019,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1063566524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &258023737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258023731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97550a3517528f04fa1c4046310dc89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetDelay: 3
-  resetSpeed: 2
 --- !u!114 &258023738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3103,12 +3046,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 258023731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499179b16eb914c439bf6784a70c6c35, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d689e74080929346b214b4331110f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityThreshold: 1
-  displacementThreshold: 0.8
-  indirectHitScore: 10
+  directHitScore: 20
+  fallScore: 10
+  fallDistance: 0.5
+  hitSound: {fileID: 0}
 --- !u!1 &269427833 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5919106134362994299, guid: 5fca3702cdf1a214a94e69dcfa704e17,
@@ -8474,7 +8418,6 @@ GameObject:
   - component: {fileID: 318718308}
   - component: {fileID: 318718307}
   - component: {fileID: 318718313}
-  - component: {fileID: 318718312}
   - component: {fileID: 318718314}
   m_Layer: 0
   m_Name: cubes (5)
@@ -8491,7 +8434,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318718306}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -8596,20 +8539,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1063566524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &318718312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318718306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97550a3517528f04fa1c4046310dc89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetDelay: 3
-  resetSpeed: 2
 --- !u!114 &318718313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8622,7 +8551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8416e0ee819f6d04d9030e0a38097601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound: {fileID: 0}
+  collisionSound: {fileID: 8300000, guid: 9eb1449a722baf844af89a8e023ea44e, type: 3}
   scoreForOne: 10
   scoreForTwo: 20
   scoreForThree: 30
@@ -8637,12 +8566,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 318718306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499179b16eb914c439bf6784a70c6c35, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d689e74080929346b214b4331110f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityThreshold: 1
-  displacementThreshold: 0.8
-  indirectHitScore: 10
+  directHitScore: 20
+  fallScore: 10
+  fallDistance: 0.5
+  hitSound: {fileID: 0}
 --- !u!1 &319605772
 GameObject:
   m_ObjectHideFlags: 0
@@ -12614,7 +12544,6 @@ GameObject:
   - component: {fileID: 777314803}
   - component: {fileID: 777314802}
   - component: {fileID: 777314808}
-  - component: {fileID: 777314807}
   - component: {fileID: 777314809}
   m_Layer: 0
   m_Name: cubes (7)
@@ -12631,7 +12560,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777314801}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -12736,20 +12665,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1063566524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &777314807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777314801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97550a3517528f04fa1c4046310dc89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetDelay: 3
-  resetSpeed: 2
 --- !u!114 &777314808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12762,7 +12677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8416e0ee819f6d04d9030e0a38097601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound: {fileID: 0}
+  collisionSound: {fileID: 8300000, guid: 9eb1449a722baf844af89a8e023ea44e, type: 3}
   scoreForOne: 10
   scoreForTwo: 20
   scoreForThree: 30
@@ -12777,12 +12692,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 777314801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499179b16eb914c439bf6784a70c6c35, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d689e74080929346b214b4331110f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityThreshold: 1
-  displacementThreshold: 0.8
-  indirectHitScore: 10
+  directHitScore: 20
+  fallScore: 10
+  fallDistance: 0.5
+  hitSound: {fileID: 0}
 --- !u!1 &782781930 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7716747580197146831, guid: 94313e563929cb3499e3989be338a213,
@@ -12888,7 +12804,6 @@ GameObject:
   - component: {fileID: 838795064}
   - component: {fileID: 838795063}
   - component: {fileID: 838795069}
-  - component: {fileID: 838795068}
   - component: {fileID: 838795070}
   m_Layer: 0
   m_Name: cubes (8)
@@ -12905,7 +12820,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838795062}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -13010,20 +12925,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1063566524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &838795068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 838795062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97550a3517528f04fa1c4046310dc89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetDelay: 3
-  resetSpeed: 2
 --- !u!114 &838795069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13036,7 +12937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8416e0ee819f6d04d9030e0a38097601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound: {fileID: 0}
+  collisionSound: {fileID: 8300000, guid: 9eb1449a722baf844af89a8e023ea44e, type: 3}
   scoreForOne: 10
   scoreForTwo: 20
   scoreForThree: 30
@@ -13051,12 +12952,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 838795062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499179b16eb914c439bf6784a70c6c35, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d689e74080929346b214b4331110f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityThreshold: 1
-  displacementThreshold: 0.8
-  indirectHitScore: 10
+  directHitScore: 20
+  fallScore: 10
+  fallDistance: 0.5
+  hitSound: {fileID: 0}
 --- !u!1 &846743889
 GameObject:
   m_ObjectHideFlags: 0
@@ -13333,16 +13235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3775091e044b192409797951dcf799de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnables:
-  - prefab: {fileID: 3307873346325473955, guid: a791581794e206045bfe781c8388a956,
-      type: 3}
-    probability: 0.763
-  - prefab: {fileID: 8145550377666510948, guid: 0e2194be1b63afc4fad969718f323016,
-      type: 3}
-    probability: 0.215
-  - prefab: {fileID: 8002757311648727863, guid: 1bf5a0659cfd13346a21df4a24cc0d0f,
-      type: 3}
-    probability: 0.344
+  spawnables: []
   spawnPoint: {fileID: 866885046}
   spawnPositionFallback: {x: 0, y: 0, z: 0}
   minSpawnInterval: 4
@@ -14099,7 +13992,6 @@ GameObject:
   - component: {fileID: 926656960}
   - component: {fileID: 926656959}
   - component: {fileID: 926656965}
-  - component: {fileID: 926656964}
   - component: {fileID: 926656966}
   m_Layer: 0
   m_Name: cubes (6)
@@ -14116,7 +14008,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926656958}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -14221,20 +14113,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1063566524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &926656964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926656958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97550a3517528f04fa1c4046310dc89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetDelay: 3
-  resetSpeed: 2
 --- !u!114 &926656965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14247,7 +14125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8416e0ee819f6d04d9030e0a38097601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound: {fileID: 0}
+  collisionSound: {fileID: 8300000, guid: 9eb1449a722baf844af89a8e023ea44e, type: 3}
   scoreForOne: 10
   scoreForTwo: 20
   scoreForThree: 30
@@ -14262,12 +14140,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 926656958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499179b16eb914c439bf6784a70c6c35, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d689e74080929346b214b4331110f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityThreshold: 1
-  displacementThreshold: 0.8
-  indirectHitScore: 10
+  directHitScore: 20
+  fallScore: 10
+  fallDistance: 0.5
+  hitSound: {fileID: 0}
 --- !u!1001 &960342625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15864,6 +15743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1063566524}
+  - component: {fileID: 1063566525}
   m_Layer: 0
   m_Name: hit targets
   m_TagString: Untagged
@@ -15896,6 +15776,19 @@ Transform:
   - {fileID: 1154008724}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1063566525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063566523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71e26d01a557d64a88446ef954c846b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetDelay: 3
 --- !u!1 &1073968992
 GameObject:
   m_ObjectHideFlags: 0
@@ -16788,7 +16681,6 @@ GameObject:
   - component: {fileID: 1154008721}
   - component: {fileID: 1154008720}
   - component: {fileID: 1154008726}
-  - component: {fileID: 1154008725}
   - component: {fileID: 1154008727}
   m_Layer: 0
   m_Name: cubes (9)
@@ -16805,7 +16697,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154008719}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -16910,20 +16802,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1063566524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1154008725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154008719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97550a3517528f04fa1c4046310dc89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetDelay: 3
-  resetSpeed: 2
 --- !u!114 &1154008726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16936,7 +16814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8416e0ee819f6d04d9030e0a38097601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound: {fileID: 0}
+  collisionSound: {fileID: 8300000, guid: 9eb1449a722baf844af89a8e023ea44e, type: 3}
   scoreForOne: 10
   scoreForTwo: 20
   scoreForThree: 30
@@ -16951,12 +16829,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1154008719}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499179b16eb914c439bf6784a70c6c35, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d689e74080929346b214b4331110f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityThreshold: 1
-  displacementThreshold: 0.8
-  indirectHitScore: 10
+  directHitScore: 20
+  fallScore: 10
+  fallDistance: 0.5
+  hitSound: {fileID: 0}
 --- !u!1 &1159676750 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 031353c911299aa47a7f51b186d6690b,
@@ -16983,7 +16862,6 @@ GameObject:
   - component: {fileID: 1187533066}
   - component: {fileID: 1187533065}
   - component: {fileID: 1187533071}
-  - component: {fileID: 1187533070}
   - component: {fileID: 1187533072}
   m_Layer: 0
   m_Name: cubes (4)
@@ -17000,7 +16878,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187533064}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -17105,20 +16983,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1063566524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1187533070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187533064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97550a3517528f04fa1c4046310dc89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetDelay: 3
-  resetSpeed: 2
 --- !u!114 &1187533071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17131,7 +16995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8416e0ee819f6d04d9030e0a38097601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound: {fileID: 0}
+  collisionSound: {fileID: 8300000, guid: 9eb1449a722baf844af89a8e023ea44e, type: 3}
   scoreForOne: 10
   scoreForTwo: 20
   scoreForThree: 30
@@ -17146,12 +17010,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1187533064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499179b16eb914c439bf6784a70c6c35, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d689e74080929346b214b4331110f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityThreshold: 1
-  displacementThreshold: 0.8
-  indirectHitScore: 10
+  directHitScore: 20
+  fallScore: 10
+  fallDistance: 0.5
+  hitSound: {fileID: 0}
 --- !u!1001 &1213277381
 PrefabInstance:
   m_ObjectHideFlags: 0
